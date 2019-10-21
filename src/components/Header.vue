@@ -1,5 +1,5 @@
 <template>
-  <div id="header">
+  <div>
  <b-navbar toggleable="lg" type="dark" variant="dark">
     <b-navbar-brand href="#">STREAMHUB</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
