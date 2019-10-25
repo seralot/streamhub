@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Elite",
+    "type": "serie",
+    "streaming": [
+        {
+            "netflix": "yes"
+        }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Batman",
+    "type": "movie",
+    "streaming": [
+        {
+            "hbo": "yes",
+            "netflix": "yes"
+        }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Gotham",
+    "type": "serie",
+    "streaming": [
+        {
+            "hbo": "yes"
+        }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "La casa de papel",
+    "type": "serie",
+    "streaming": [
+        {
+            "netflix": "yes"
+        }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "El diario de Noah",
+    "type": "movie",
+    "streaming": "https://via.placeholder.com/150/771796"
+  }
+]
+    

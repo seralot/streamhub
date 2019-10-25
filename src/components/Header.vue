@@ -1,7 +1,7 @@
 <template>
-  <div id="header">
+  <div>
  <b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand href="#">STREAMHUB</b-navbar-brand>
+    <b-navbar-brand href="#"><i class="far fa-play-circle"></i> STREAMHUB</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="text-uppercase">
