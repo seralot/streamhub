@@ -15,9 +15,9 @@
             <div class="d-flex justify-content-between text-uppercase">
                 <h6 class="text-left">
                     <!-- botones para elegir si mostrar series, peliculas o documentales -->
-                    <button @click="cogerDatos('serie')" class="btnNoBorder" >Series</button>  | 
-                    <button @click="cogerDatos('movie')" class="btnNoBorder" >Peliculas</button> |
-                    <button @click="cogerDatos('movie')" class="btnNoBorder" >Documentales</button>
+                    <button @click="loadData('serie')" class="btnNoBorder" >Series</button>  | 
+                    <button @click="loadData('movie')" class="btnNoBorder" >Peliculas</button> |
+                    <button @click="loadData('movie')" class="btnNoBorder" >Documentales</button>
                 </h6>
                 <div>
                     <h3>
@@ -54,19 +54,19 @@ export default {
         };
     },
     mounted () {
-        this.cogerDatos('serie');
+        this.loadData('serie');
     },
     methods: {
-        cogerDatos: function(typeSearch){
+        loadData: function(typeSearch){
             this.moviesFound = [];
 
-            this.datos().forEach(item => {
+            this.data().forEach(item => {
                 if(item.type==typeSearch){
                     this.moviesFound.push(item);
                 }
             });
         },
-        datos: function(){
+        data: function(){
             let movies = [
                 { id: 1, name: 'Elite', type: 'serie'},
                 { id: 2, name: 'Sex Education', type: 'serie' },
