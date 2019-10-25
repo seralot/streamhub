@@ -12,6 +12,7 @@ Vue.component('mainHeader', Header);
 Vue.component('card-movie', CardMovie);
 
 Vue.use(BootstrapVue);
+Vue.config.app = process.env;
 Vue.config.productionTip = false
 
 new Vue({
