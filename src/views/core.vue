@@ -1,15 +1,6 @@
 <template>
   <div id="core">
-    <div class="mt-3 mb-5">
-        <p>Mostrando el contenido de:</p>
-        <div class="d-flex justify-content-center mt-3 margin">
-            <p class="bg-secondary font-weight-bold text-white">NETFLIX</p>
-            <p>HBO</p>
-            <p>PRIME VIDEO</p>
-            <p>DISNEY +</p>
-            <p>FUBOTV</p>
-        </div>
-    </div>
+    <menu-platform></menu-platform>
     <div>
         <div class="w-75 ml-5">
             <div class="d-flex justify-content-between text-uppercase">
@@ -83,12 +74,15 @@ export default {
 </script>
 
 <style>
-    .margin p{
+    .margin img{
         margin: 0 1em;
         padding: 0.5em;
     }
 
     .btnNoBorder{
         border: none !important;
+        background-color: transparent;
     }
+
+   
 </style>
