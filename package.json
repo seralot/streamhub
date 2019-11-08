@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "format-check": "prettier --config --check \"src/**/*.+(html|js|vue|sass)\"",
+    "format-write": "prettier --config --write \"src/**/*.+(html|js|vue|sass)\""
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -23,6 +25,9 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "husky": "^3.0.9",
+    "prettier": "1.18.2",
+    "pretty-quick": "^2.0.1",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -43,6 +48,19 @@
     "plugins": {
       "autoprefixer": {}
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": false,
+    "printWidth": 88,
+    "htmlWhitespaceSensitivity": "ignore"
   },
   "browserslist": [
     "> 1%",

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Elite",
+    "type": "serie"
+  },
+  {
+    "id": 2,
+    "title": "Sex Education",
+    "type": "serie"
+  },
+  {
+    "id": 3,
+    "title": "Stranger Things",
+    "type": "serie"
+  },
+  {
+    "id": 4,
+    "title": "Mindhunter",
+    "type": "serie"
+  },
+  {
+    "id": 5,
+    "title": "Black Mirror",
+    "type": "serie"
+  },
+  {
+    "id": 6,
+    "title": "Bright",
+    "type": "movie"
+  }
+]
