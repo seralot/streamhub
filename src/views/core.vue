@@ -6,7 +6,7 @@
         <div
           class="d-flex flex-column flex-md-row justify-content-between text-uppercase"
         >
-          <div class="text-center tex-md-center">
+          <div class="text-center tex-md-center tabs">
             <!-- botones para elegir si mostrar series, peliculas o documentales -->
             <button @click="loadData('serie')" class="btnNoBorder">Series</button>
             |
