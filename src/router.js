@@ -14,5 +14,15 @@ export default new Router({
       name: "core",
       component: core,
     },
+    {
+      path: "/series", // Falta crear vista series
+      name: "series",
+      component: core,
+    },
+    {
+      path: "/peliculas", // Falta crear vista peliculas
+      name: "peliculas",
+      component: core,
+    },
   ],
 })

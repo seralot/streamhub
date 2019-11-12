@@ -1,16 +1,15 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark">
-      <b-navbar-brand href="#">
+      <b-navbar-brand :to="{ name: 'core' }">
         <i class="far fa-play-circle"></i>
         STREAMHUB
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="text-uppercase">
-          <b-nav-item href="#">Series</b-nav-item>
-          <b-nav-item href="#">Peliculas</b-nav-item>
-          <b-nav-item href="#">Plataformas</b-nav-item>
+          <b-nav-item :to="{ name: 'series' }">Series</b-nav-item>
+          <b-nav-item :to="{ name: 'peliculas' }">Peliculas</b-nav-item>
           <b-nav-item href="#">Estrenos/Abandonos</b-nav-item>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
