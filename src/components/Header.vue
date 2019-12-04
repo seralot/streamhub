@@ -8,9 +8,21 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="text-uppercase">
+          <b-nav-item :to="{ name: 'core' }">Inicio</b-nav-item>
           <b-nav-item :to="{ name: 'series' }">Series</b-nav-item>
           <b-nav-item :to="{ name: 'peliculas' }">Peliculas</b-nav-item>
-          <b-nav-item href="#">Estrenos/Abandonos</b-nav-item>
+          <b-nav-item :to="{ name: 'documentales' }">Documentales</b-nav-item>
+          <b-nav-item-dropdown class="mr-4">
+            <template v-slot:button-content>
+              Plataformas
+            </template>
+            <b-dropdown-item :to="{ name: 'series' }">Netflix</b-dropdown-item>
+            <b-dropdown-item :to="{ name: 'peliculas' }">HBO</b-dropdown-item>
+            <b-dropdown-item :to="{ name: 'documentales' }">
+              Prime Video
+            </b-dropdown-item>
+            <b-dropdown-item :to="{ name: 'documentales' }">Disney +</b-dropdown-item>
+          </b-nav-item-dropdown>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
