@@ -1,25 +1,12 @@
 <template>
-  <div id="core">
+  <div id="series">
     <menu-platform></menu-platform>
     <div>
       <div class="container-fluid">
-        <div
-          class="d-flex flex-column flex-md-row justify-content-between text-uppercase mx-5"
-        >
-          <v-tabs
-            background-color="transparent"
-            color="black"
-            class="col-10 col-md-8 col-xl-9"
-          >
-            <v-tab @click="loadData('serie')">Series</v-tab>
-            <v-tab @click="loadData('movie')">Peliculas</v-tab>
-            <v-tab @click="loadData('documental')">Documentales</v-tab>
-          </v-tabs>
-          <btn-month class="mt-5"></btn-month>
-        </div>
+        <filter-content></filter-content>
         <div class="container-fluid mt-5 ml-5">
           <div class="row">
-            <h3 class="ml-5">Estrenos</h3>
+            <h3 class="ml-5">Series</h3>
           </div>
           <div class="row">
             <card-movie
@@ -36,10 +23,11 @@
 
 <script>
 export default {
-  name: "core",
+  name: "series",
   data() {
     return {
       moviesFound: [],
+      años: [2019, 2018, 2017, 2016, 2015],
     }
   },
   mounted() {
