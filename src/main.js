@@ -9,6 +9,7 @@ import Header from "@/components/Header.vue"
 import CardMovie from "@/components/CardMovie.vue"
 import MenuPlatform from "@/components/MenuPlatform.vue"
 import BtnMonth from "@/components/BtnMonth.vue"
+import vuetify from "./plugins/vuetify"
 
 Vue.component("mainHeader", Header)
 Vue.component("card-movie", CardMovie)
@@ -19,11 +20,10 @@ Vue.use(BootstrapVue)
 Vue.config.app = process.env
 Vue.config.productionTip = false
 
-new Vue({
+const vm = new Vue({
   router,
-  Header,
-  CardMovie,
-  MenuPlatform,
-  BtnMonth,
+  vuetify,
   render: h => h(App),
 }).$mount("#app")
+
+export default vm

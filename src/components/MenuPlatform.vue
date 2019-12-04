@@ -1,6 +1,6 @@
 <template>
   <div class="mt-3 mb-5">
-    <p>Mostrando el contenido de:</p>
+    <p class="text-center">Mostrando el contenido de:</p>
     <div class="d-flex justify-content-center mt-3 margin">
       <img
         @click="changeActive()"

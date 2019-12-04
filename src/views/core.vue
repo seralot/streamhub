@@ -2,30 +2,25 @@
   <div id="core">
     <menu-platform></menu-platform>
     <div>
-      <div class="w-75 mx-md-5">
+      <div class="container">
         <div
           class="d-flex flex-column flex-md-row justify-content-between text-uppercase"
         >
-          <div class="text-center tex-md-center tabs">
-            <!-- botones para elegir si mostrar series, peliculas o documentales -->
-            <button @click="loadData('serie')" class="btnNoBorder">Series</button>
-            |
-            <button @click="loadData('movie')" class="btnNoBorder">Peliculas</button>
-            |
-            <button @click="loadData('movie')" class="btnNoBorder">Documentales</button>
-          </div>
-          <btn-month></btn-month>
+          <v-tabs
+            background-color="transparent"
+            color="black"
+            class="col-10 col-md-8 col-xl-9"
+          >
+            <v-tab @click="loadData('serie')">Series</v-tab>
+            <v-tab @click="loadData('movie')">Peliculas</v-tab>
+            <v-tab @click="loadData('documental')">Documentales</v-tab>
+          </v-tabs>
+          <btn-month class="mt-5"></btn-month>
         </div>
-        <div class="ml-5">
-          <h3 class="text-left">Estrenos</h3>
+        <div class="mt-5 ml-5">
           <div class="row">
-            <card-movie
-              v-for="data in moviesFound"
-              :key="data.id"
-              :valor="data.name"
-            ></card-movie>
+            <h3 class="ml-5">Estrenos</h3>
           </div>
-          <h3 class="text-left">Abandonos</h3>
           <div class="row">
             <card-movie
               v-for="data in moviesFound"
