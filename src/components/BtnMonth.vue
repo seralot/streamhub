@@ -1,15 +1,11 @@
 <template>
   <div>
-    <h3>
+    <h5>
       <!-- mes actual con botones -->
-      <button @click="get_prev_month()" class="btnNoBorder">
-        <i class="fas fa-caret-left"></i>
-      </button>
+      <v-icon @click="get_prev_month()" large>mdi-menu-left</v-icon>
       {{ nameMonth }}
-      <button @click="get_next_month()" class="btnNoBorder">
-        <i class="fas fa-caret-right"></i>
-      </button>
-    </h3>
+      <v-icon @click="get_next_month()" large>mdi-menu-right</v-icon>
+    </h5>
   </div>
 </template>
 
