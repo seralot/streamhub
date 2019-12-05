@@ -1,6 +1,6 @@
 <template>
   <div class="row m-1">
-    <v-card class="d-inline-block my-1" hover>
+    <v-card class="d-inline-block my-1 no-underline" hover :to="{ name: 'contenido' }">
       <v-container>
         <v-row class="m-0" align="center" justify="center">
           <v-col cols="auto">
@@ -24,7 +24,7 @@
               </v-col>
 
               <v-col class="px-0">
-                <v-btn icon btn @click.stop="dialog = true">
+                <v-btn icon btn @click.stop.prevent="dialog = true">
                   <v-icon>mdi-youtube</v-icon>
                 </v-btn>
               </v-col>
@@ -42,16 +42,15 @@
         <h5 class="black--text text-center font-weight-bold">{{ media.Title }}</h5>
       </v-card-subtitle>
     </v-card>
-
-    <v-dialog v-model="dialog" max-width="630">
+    <v-dialog v-model="dialog" max-width="660">
       <v-card>
         <v-card-title class="headline">Trailer {{ media.Title }}</v-card-title>
 
         <iframe
           class="ml-5"
-          width="590"
-          height="315"
-          src="https://www.youtube.com/embed/swLQpygWDBk"
+          width="620"
+          height="415"
+          src="https://www.youtube.com/embed/Zi4LMpSDccc"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
@@ -112,5 +111,11 @@ export default {
 }
 .mdi-information:hover {
   color: darkblue !important;
+}
+.mdi-amazon:hover {
+  color: #ff9900 !important;
+}
+.no-underline:hover {
+  text-decoration: none;
 }
 </style>

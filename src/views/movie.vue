@@ -1,5 +1,5 @@
 <template>
-  <div id="series">
+  <div id="movie">
     <menu-platform></menu-platform>
     <div>
       <div class="container-fluid">
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "series",
+  name: "movie",
   data() {
     return {
       moviesFound: [],
