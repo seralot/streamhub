@@ -11,6 +11,10 @@
               <v-col class="px-0">
                 <v-icon>mdi-calendar-check</v-icon>
                 <h6 class="text-center">{{ estreno }}</h6>
+                <div v-if="score">
+                  <v-icon>mdi-star</v-icon>
+                  <h6>9,0</h6>
+                </div>
               </v-col>
 
               <v-col class="px-0">
@@ -70,6 +74,10 @@ import { API_KEY, URL } from "@/services/services"
 import axios from "axios"
 export default {
   name: "cardMovie",
+  props: {
+    score: Boolean,
+    valor: String,
+  },
   data() {
     return {
       media: [],
@@ -91,9 +99,6 @@ export default {
         this.media = response.data
       })
     },
-  },
-  props: {
-    valor: String,
   },
 }
 </script>
