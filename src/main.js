@@ -11,12 +11,18 @@ import CardMovie from "@/components/CardMovie.vue"
 import MenuPlatform from "@/components/MenuPlatform.vue"
 import BtnMonth from "@/components/BtnMonth.vue"
 import FilterContent from "@/components/FilterContent.vue"
+import CardContent from "@/components/CardContent.vue"
+import CardReviews from "@/components/CardReviews.vue"
+import CardCasting from "@/components/CardCasting.vue"
 
 Vue.component("mainHeader", Header)
 Vue.component("card-movie", CardMovie)
 Vue.component("menu-platform", MenuPlatform)
 Vue.component("btn-month", BtnMonth)
 Vue.component("filter-content", FilterContent)
+Vue.component("card-content", CardContent)
+Vue.component("card-reviews", CardReviews)
+Vue.component("card-casting", CardCasting)
 
 Vue.use(BootstrapVue)
 Vue.config.app = process.env
