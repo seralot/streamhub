@@ -16,9 +16,9 @@
             <template v-slot:button-content>
               Plataformas
             </template>
-            <b-dropdown-item :to="{ name: 'series' }">Netflix</b-dropdown-item>
-            <b-dropdown-item :to="{ name: 'peliculas' }">HBO</b-dropdown-item>
-            <b-dropdown-item :to="{ name: 'documentales' }">
+            <b-dropdown-item :to="{ name: 'plataforma' }">Netflix</b-dropdown-item>
+            <b-dropdown-item :to="{ name: 'plataforma' }">HBO</b-dropdown-item>
+            <b-dropdown-item :to="{ name: 'plataforma' }">
               Prime Video
             </b-dropdown-item>
             <b-dropdown-item :to="{ name: 'documentales' }">Disney +</b-dropdown-item>
