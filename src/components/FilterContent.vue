@@ -7,7 +7,7 @@
       <v-autocomplete
         v-model="value"
         :items="moviesFound"
-        placeholder="Buscar serie"
+        :placeholder="searchName"
         label="Nombre"
       ></v-autocomplete>
     </v-col>
@@ -43,6 +43,9 @@
 <script>
 export default {
   name: "filter-content",
+  props: {
+    typesearch: String,
+  },
   data() {
     return {
       ages: [2019, 2018, 2017, 2016, 2015],
@@ -56,6 +59,9 @@ export default {
     icon() {
       if (this.someAge) return "mdi-minus-box"
       return "mdi-checkbox-blank-outline"
+    },
+    searchName() {
+      return "Buscar " + this.typesearch
     },
   },
   methods: {

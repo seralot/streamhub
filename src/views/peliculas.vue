@@ -3,10 +3,10 @@
     <menu-platform></menu-platform>
     <div>
       <div class="container-fluid">
-        <filter-content typesearch="serie"></filter-content>
+        <filter-content typesearch="pelicula"></filter-content>
         <div class="container-fluid mt-5 ml-5">
           <div class="row">
-            <h3 class="ml-5">Series</h3>
+            <h3 class="ml-5">Peliculas</h3>
           </div>
           <div class="row">
             <card-movie
@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted() {
-    this.loadData("serie")
+    this.loadData("movie")
   },
   methods: {
     loadData: function(typeSearch) {

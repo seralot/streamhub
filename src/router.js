@@ -3,6 +3,7 @@ import Router from "vue-router"
 
 import core from "@/views/core.vue"
 import series from "@/views/series.vue"
+import peliculas from "@/views/peliculas.vue"
 
 Vue.use(Router)
 
@@ -16,14 +17,14 @@ export default new Router({
       component: core,
     },
     {
-      path: "/series", // Falta crear vista series
+      path: "/series",
       name: "series",
       component: series,
     },
     {
-      path: "/peliculas", // Falta crear vista peliculas
+      path: "/peliculas",
       name: "peliculas",
-      component: core,
+      component: peliculas,
     },
   ],
 })
