@@ -6,6 +6,7 @@ import series from "@/views/series.vue"
 import movie from "@/views/movie.vue"
 import documental from "@/views/documental.vue"
 import content from "@/views/content.vue"
+import platform from "@/views/platform.vue"
 
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ export default new Router({
       path: "/contenido",
       name: "contenido",
       component: content,
+    },
+    {
+      path: "/plataforma",
+      name: "plataforma",
+      component: platform,
     },
   ],
 })

@@ -14,6 +14,7 @@ import FilterContent from "@/components/FilterContent.vue"
 import CardContent from "@/components/CardContent.vue"
 import CardReviews from "@/components/CardReviews.vue"
 import CardCasting from "@/components/CardCasting.vue"
+import CardPlatform from "@/components/CardPlatform.vue"
 
 Vue.component("mainHeader", Header)
 Vue.component("card-movie", CardMovie)
@@ -23,6 +24,7 @@ Vue.component("filter-content", FilterContent)
 Vue.component("card-content", CardContent)
 Vue.component("card-reviews", CardReviews)
 Vue.component("card-casting", CardCasting)
+Vue.component("card-platform", CardPlatform)
 
 Vue.use(BootstrapVue)
 Vue.config.app = process.env
