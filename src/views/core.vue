@@ -31,7 +31,6 @@
         </div>
       </div>
     </div>
-    <mainFooter></mainFooter>
   </div>
 </template>
 
