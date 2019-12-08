@@ -7,6 +7,7 @@ import "bootstrap-vue/dist/bootstrap-vue.css"
 import vuetify from "./plugins/vuetify"
 
 import Header from "@/components/Header.vue"
+import Footer from "@/components/Footer.vue"
 import CardMovie from "@/components/CardMovie.vue"
 import MenuPlatform from "@/components/MenuPlatform.vue"
 import BtnMonth from "@/components/BtnMonth.vue"
@@ -17,6 +18,7 @@ import CardCasting from "@/components/CardCasting.vue"
 import CardPlatform from "@/components/CardPlatform.vue"
 
 Vue.component("mainHeader", Header)
+Vue.component("mainFooter", Footer)
 Vue.component("card-movie", CardMovie)
 Vue.component("menu-platform", MenuPlatform)
 Vue.component("btn-month", BtnMonth)

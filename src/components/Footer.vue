@@ -1,0 +1,31 @@
+<template>
+  <div id="footer">
+    <v-footer dark padless absolute>
+      <v-col class="text-center" cols="11">
+        {{ new Date().getFullYear() }} —
+        <strong>Seralot</strong>
+      </v-col>
+      <v-col class="text-center" cols="1">
+        <a
+          class="no-underline"
+          href="https://github.com/seralot/streamhub"
+          target="_blank"
+        >
+          <v-icon>mdi-github-box</v-icon>
+        </a>
+      </v-col>
+    </v-footer>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "footer",
+}
+</script>
+
+<style>
+.mdi-github-box:hover {
+  color: grey;
+}
+</style>
