@@ -45,30 +45,37 @@ export default {
       isActiveDisney: false,
     }
   },
+  mounted() {
+    this.$emit("update:menuPlatform", "Netflix")
+  },
   methods: {
     changeActive: function() {
       this.isActive = true
       this.isActiveHBO = false
       this.isActiveVideo = false
       this.isActiveDisney = false
+      this.$emit("update:menuPlatform", "Netflix")
     },
     changeActiveHBO: function() {
       this.isActive = false
       this.isActiveHBO = true
       this.isActiveVideo = false
       this.isActiveDisney = false
+      this.$emit("update:menuPlatform", "HBO")
     },
     changeActiveVideo: function() {
       this.isActive = false
       this.isActiveHBO = false
       this.isActiveVideo = true
       this.isActiveDisney = false
+      this.$emit("update:menuPlatform", "Amazon Video")
     },
     changeActiveDisney: function() {
       this.isActive = false
       this.isActiveHBO = false
       this.isActiveVideo = false
       this.isActiveDisney = true
+      this.$emit("update:menuPlatform", "Disney +")
     },
   },
 }

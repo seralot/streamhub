@@ -1,6 +1,6 @@
 <template>
   <div id="core">
-    <menu-platform></menu-platform>
+    <menu-platform :menuPlatform.sync="platform"></menu-platform>
     <div>
       <div class="container-fluid">
         <div
@@ -11,21 +11,22 @@
             color="black"
             class="col-10 col-md-8 col-xl-9"
           >
-            <v-tab @click="loadData('serie')">Series</v-tab>
-            <v-tab @click="loadData('movie')">Peliculas</v-tab>
-            <v-tab @click="loadData('documental')">Documentales</v-tab>
+            <v-tab @click="changeType('Serie')">Series</v-tab>
+            <v-tab @click="changeType('Pelicula')">Peliculas</v-tab>
+            <v-tab @click="changeType('Documental')">Documentales</v-tab>
           </v-tabs>
-          <btn-month class="mt-5"></btn-month>
+          <btn-month :btnMonth.sync="month" class="mt-5"></btn-month>
         </div>
         <div class="container-fluid mt-5 ml-5">
           <div class="row">
             <h3 class="ml-5">Estrenos</h3>
           </div>
-          <div class="row">
+          <p v-if="searching">Buscando...</p>
+          <div v-else class="row">
             <card-movie
-              v-for="data in moviesFound"
-              :key="data.id"
-              :valor="data.name"
+              v-for="(content, index) in contents"
+              :key="index"
+              :content="content"
             ></card-movie>
           </div>
         </div>
@@ -35,37 +36,66 @@
 </template>
 
 <script>
+import { URL } from "@/services/services"
+import axios from "axios"
+import _ from "lodash"
 export default {
   name: "core",
   data() {
     return {
-      moviesFound: [],
+      contents: {},
+      platform: null,
+      type: "Serie",
+      month: null,
+      searching: false,
     }
   },
   mounted() {
-    this.loadData("serie")
+    this.load(this.platform, this.type, this.month)
   },
   methods: {
-    loadData: function(typeSearch) {
-      this.moviesFound = []
-
-      this.get_contents().forEach(item => {
-        if (item.type == typeSearch) {
-          this.moviesFound.push(item)
-        }
-      })
+    changeType: function(newType) {
+      this.type = newType
     },
-    get_contents: function() {
-      let movies = [
-        { id: 1, name: "Elite", type: "serie" },
-        { id: 2, name: "Sex Education", type: "serie" },
-        { id: 3, name: "Stranger Things", type: "serie" },
-        { id: 4, name: "Mindhunter", type: "serie" },
-        { id: 5, name: "Black Mirror", type: "serie" },
-        { id: 6, name: "Bright", type: "movie" },
-      ]
-
-      return movies
+    // cargamos los datos de la API
+    load: function(platform, type, month) {
+      this.contents = {}
+      this.searching = true
+      axios
+        .get(URL + "plataformaContenido/?format=json")
+        .then(response => {
+          this.contents = _.mapValues(response.data.results, function(item) {
+            if (
+              item.platform == platform &&
+              item.content.typeContent == type &&
+              item.content.release.substr(5, 2) == month
+            ) {
+              return {
+                platform: item.platform,
+                typeContent: item.content.typeContent,
+                title: item.content.title,
+                release: item.content.release,
+                poster: item.content.poster,
+                trailer: item.content.trailer,
+              }
+            }
+          })
+        })
+        .catch(() => {})
+        .finally(() => {
+          this.searching = false
+        })
+    },
+  },
+  watch: {
+    type: function() {
+      this.load(this.platform, this.type, this.month)
+    },
+    platform: function() {
+      this.load(this.platform, this.type, this.month)
+    },
+    month: function() {
+      this.load(this.platform, this.type, this.month)
     },
   },
 }
