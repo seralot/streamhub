@@ -43,6 +43,7 @@ export default {
     get_month: function() {
       let actual_month = new Date()
       this.month = actual_month.getMonth()
+      this.$emit("update:btnMonth", this.month + 1)
     },
     get_next_month: function() {
       if (this.month < 11) {
@@ -50,6 +51,7 @@ export default {
       } else {
         this.month = 0
       }
+      this.$emit("update:btnMonth", this.month + 1)
     },
     get_prev_month: function() {
       if (this.month > 1) {
@@ -57,6 +59,7 @@ export default {
       } else {
         this.month = 11
       }
+      this.$emit("update:btnMonth", this.month + 1)
     },
   },
 }
