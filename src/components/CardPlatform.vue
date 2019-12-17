@@ -1,11 +1,13 @@
 <template>
-  <div id="cardplatform" v-if="selectedPlatform[0]" class="mt-5 p-0">
+  <div id="cardplatform" class="mt-5 p-0">
     <v-container>
       <v-img
         class="mx-auto my-4"
         width="450"
         height="120"
-        :src="`${selectedPlatform[0].logo}`"
+        :src="
+          `https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1024px-Netflix_2015_logo.svg.png`
+        "
       ></v-img>
     </v-container>
     <v-container class="shadow-lg p-3 mb-5 bg-white rounded">
@@ -23,40 +25,38 @@
             <tbody>
               <tr>
                 <td>Precio Mensual</td>
-                <td>{{ selectedPlatform[0].priceBasic }} €</td>
-                <td>{{ selectedPlatform[0].priceStandard }} €</td>
-                <td>{{ selectedPlatform[0].pricePremium }} €</td>
+                <td>8.00 €</td>
+                <td>12.00 €</td>
+                <td>16.00 €</td>
               </tr>
               <tr>
                 <td>Resolución</td>
-                <td>{{ selectedPlatform[0].resolutionBasic }}</td>
-                <td>{{ selectedPlatform[0].resolutionStandard }}</td>
-                <td>{{ selectedPlatform[0].resolutionPremium }}</td>
+                <td>SD</td>
+                <td>HD</td>
+                <td>HD/UHD 4K</td>
               </tr>
               <tr>
                 <td>Dispositivos simultáneos</td>
-                <td>{{ selectedPlatform[0].devicesBasic }}</td>
-                <td>{{ selectedPlatform[0].devicesStandard }}</td>
-                <td>{{ selectedPlatform[0].devicesPremium }}</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
               </tr>
               <tr>
                 <td>Perfiles de usuario</td>
                 <td v-for="n in 3" :key="n">
-                  Hasta {{ selectedPlatform[0].profiles }}
+                  Hasta 5
                 </td>
               </tr>
               <tr>
                 <td>Control parental</td>
                 <td v-for="n in 3" :key="n">
-                  <span v-if="selectedPlatform[0].parentalControl">Si</span>
-                  <span v-else>No</span>
+                  <span>Si</span>
                 </td>
               </tr>
               <tr>
                 <td>Modo sin conexión</td>
                 <td v-for="n in 3" :key="n">
-                  <span v-if="selectedPlatform[0].noConnection">Si</span>
-                  <span v-else>No</span>
+                  <span>Si</span>
                 </td>
               </tr>
             </tbody>
