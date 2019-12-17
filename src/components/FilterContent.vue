@@ -5,14 +5,18 @@
   >
     <v-col cols="3" md="2">
       <v-autocomplete
-        v-model="value"
-        :items="moviesFound"
+        clearable
+        v-model="contents"
+        :items="contentSearch"
         :placeholder="searchName"
         label="Nombre"
       ></v-autocomplete>
     </v-col>
+    <v-col cols="2" v-if="typeContent">
+      <v-select :items="types" label="Tipo" value="Serie"></v-select>
+    </v-col>
     <v-col cols="2">
-      <v-autocomplete v-model="value" items="Acción" label="Genero"></v-autocomplete>
+      <v-autocomplete clearable :items="genre" label="Genero"></v-autocomplete>
     </v-col>
     <v-col cols="2" md="2" xl="2">
       <v-select v-model="selectedAges" :items="ages" label="Años" multiple>
@@ -45,9 +49,14 @@ export default {
   name: "filter-content",
   props: {
     typesearch: String,
+    typeContent: Boolean,
+    contents: Object,
   },
   data() {
     return {
+      types: ["Serie", "Pelicula", "Documental"],
+      contentSearch: [],
+      genre: [],
       ages: [2019, 2018, 2017, 2016, 2015],
       selectedAges: [],
     }
@@ -64,6 +73,9 @@ export default {
       return "Buscar " + this.typesearch
     },
   },
+  mounted() {
+    this.loadSearchContent()
+  },
   methods: {
     toggle() {
       this.$nextTick(() => {
@@ -71,6 +83,12 @@ export default {
           this.selectedAges = []
         }
       })
+    },
+    loadSearchContent: function() {
+      for (const item in this.contents) {
+        this.contentSearch.push(this.contents[item].title)
+        this.genre.push(this.contents[item].genre)
+      }
     },
   },
 }

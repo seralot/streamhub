@@ -1,27 +1,27 @@
 <template>
   <div id="cardcontent" class="mt-5 d-flex p-0">
-    <v-container class="d-flex shadow-lg p-3 mb-5 bg-white rounded">
+    <v-container class="margin-l d-md-flex shadow-lg p-3 mb-5 bg-white rounded">
       <v-img
-        width="500"
-        height="600"
-        src="https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX300.jpg"
+        width="30em"
+        height="46em"
+        src="https://m.media-amazon.com/images/M/MV5BY2JiYzNhZWMtZmE4My00NzhmLWEzZjAtMDIwODkzOWY3NWQ5XkEyXkFqcGdeQXVyODg1MTc3MTM@._V1_SY1000_CR0,0,642,1000_AL_.jpg"
       ></v-img>
       <div class="flex flex-column ml-5">
         <div class="row justify-content-between mx-3">
-          <h3>Frozen</h3>
+          <h3>V-Wars</h3>
           <span>
             <b>Año:</b>
-            2013
+            2019
           </span>
         </div>
         <v-row class="justify-content-around">
           <span>
             <b>IMDb:</b>
-            4,5/10
+            5,0/10
           </span>
           <span>
             <b>FilmAffinity:</b>
-            4,5/10
+            6,2/10
           </span>
           <span>
             <b>RottentTomatoes:</b>
@@ -31,14 +31,15 @@
         <div class="mt-5">
           <h5>Información</h5>
           <v-row class="ml-3">
-            <v-icon x-large class="mr-3" @click.stop="dialog = true">
+            <p class="ml-2 text-center border rounded p-1">16+</p>
+            <span class="mt-2 ml-5">Animación, Comedia</span>
+            <v-icon x-large class="mb-3 mr-3 ml-5" @click.stop="dialog = true">
               mdi-youtube
             </v-icon>
-            <span class="mt-2 ml-5">Animación, Comedia</span>
-            <v-row v-if="serie" class="mt-2 mx-5 justify-content-around">
+            <v-row class="mt-2 mx-5 justify-content-around">
               <span>
                 <b>Temporadas:</b>
-                2
+                1
               </span>
               <span>
                 <b>Capitulos:</b>
@@ -50,10 +51,9 @@
         <div class="mt-5">
           <h5>Descripción</h5>
           <p class="mt-3">
-            Cuando una profecía condena a un reino a vivir un invierno eterno, la joven
-            Anna, el temerario montañero Kristoff y el reno Sven emprenden un viaje
-            épico en busca de Elsa, hermana de Anna y Reina de las Nieves, para poner
-            fin al gélido hechizo. Adaptación libre del cuento "La reina de las nieves".
+            Una enfermedad que se propaga rápidamente y convierte a las víctimas en
+            vampiros chupasangres enfrenta a dos buenos amigos en una lucha por el
+            futuro de la humanidad.
           </p>
         </div>
         <div class="mt-5">
@@ -61,34 +61,22 @@
           <v-row class="justify-content-around">
             <p>
               <v-icon>mdi-netflix</v-icon>
-              Temporadas: 1 y 2
-              <v-icon>mdi-video-4k-box</v-icon>
-            </p>
-            <p>
-              <v-icon>mdi-amazon</v-icon>
-              Temporada: 1
+              Temporadas: 1
               <v-icon>mdi-video-4k-box</v-icon>
             </p>
           </v-row>
-        </div>
-        <div class="mt-5">
-          <h5>Premios</h5>
-          <p>2013: 2 Premios Oscar: Mejor película de animación y mejor canción</p>
-          <p>
-            2013: Globos de Oro: Mejor película de animación. Nominada a mejor canción
-          </p>
         </div>
       </div>
     </v-container>
     <v-dialog v-model="dialog" max-width="660">
       <v-card>
-        <v-card-title class="headline">Trailer Frozen</v-card-title>
+        <v-card-title class="headline">Trailer V-Wars</v-card-title>
 
         <iframe
           class="ml-5"
           width="620"
           height="415"
-          src="https://www.youtube.com/embed/Zi4LMpSDccc"
+          src="https://www.youtube.com/embed/M1kuAdVKvuE"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
@@ -117,4 +105,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.margin-l {
+  margin-left: 5rem;
+}
+</style>
