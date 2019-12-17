@@ -1,5 +1,5 @@
 <template>
-  <div id="footer">
+  <div id="main-footer">
     <v-footer dark padless class="mt-5" color="#343a40">
       <v-col class="text-center" cols="11">
         {{ new Date().getFullYear() }} —
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "footer",
+  name: "main-footer",
 }
 </script>
 

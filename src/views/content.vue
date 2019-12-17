@@ -1,13 +1,6 @@
 <template>
-  <div id="content" class="mt-5">
-    <v-app-bar
-      absolute
-      dark
-      scroll-target="#playground-example"
-      color="transparent"
-      collapse="true"
-      flat
-    >
+  <div id="v-content" class="mt-5">
+    <v-app-bar absolute dark color="transparent" collapse flat>
       <v-btn icon>
         <v-icon class="text-secondary" x-large>mdi-arrow-left-bold-box</v-icon>
       </v-btn>
@@ -26,7 +19,7 @@
 
 <script>
 export default {
-  name: "content",
+  name: "v-content",
 }
 </script>
 
