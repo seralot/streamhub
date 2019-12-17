@@ -107,14 +107,14 @@ export default {
     },
   },
   mounted() {
-    this.load(this.platform, this.type, this.month)
+    this.load(this.platform, this.type, this.month, this.month_filter)
   },
   methods: {
     // cargamos los datos de la API
-    load: function(platform, type, month) {
+    load: function(platform, type, month, filter) {
       this.contents = {}
       this.searching = true
-      if (this.month_filter) {
+      if (filter) {
         axios
           .get(URL + "plataformaContenido/?format=json")
           .then(response => {
@@ -168,13 +168,13 @@ export default {
   },
   watch: {
     type: function() {
-      this.load(this.platform, this.type, this.month)
+      this.load(this.platform, this.type, this.month, this.month_filter)
     },
     platform: function() {
-      this.load(this.platform, this.type, this.month)
+      this.load(this.platform, this.type, this.month, this.month_filter)
     },
     month: function() {
-      this.load(this.platform, this.type, this.month)
+      this.load(this.platform, this.type, this.month, this.month_filter)
     },
   },
 }
