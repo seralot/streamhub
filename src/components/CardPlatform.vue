@@ -79,7 +79,7 @@ export default {
       dialog: false,
     }
   },
-  beforeMount() {
+  mounted() {
     this.load("Netflix")
   },
   methods: {
